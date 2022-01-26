@@ -1,15 +1,15 @@
-import Image from 'next/image';
-import React from 'react';
+import Image from 'next/image'
+import React from 'react'
 
 const SmallCards = ({ data }) => {
   return (
     <section className="pt-6">
-      <h2 className="text-4xl font-semibold py-8">Explore Nearby</h2>
+      <h2 className="py-8 text-4xl font-semibold">Explore Nearby</h2>
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {data?.map(({ img, location, distance }) => (
           <div
             key={img}
-            className="flex items-center m-2 mt-5 space-x-4 rounded-xl cursor-pointer hover:bg-gray-100 hover:scale-105 transition transform duration-200 ease-out"
+            className="m-2 mt-5 flex transform cursor-pointer items-center space-x-4 rounded-xl transition duration-200 ease-out hover:scale-105 hover:bg-gray-100"
           >
             <div className="relative h-16 w-16">
               <Image
@@ -28,7 +28,7 @@ const SmallCards = ({ data }) => {
         ))}
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default SmallCards;
+export default SmallCards

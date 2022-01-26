@@ -1,14 +1,14 @@
-import Image from 'next/image';
+import Image from 'next/image'
 
 const MediumCards = ({ data }) => {
   return (
     <section className="pt-6">
-      <h2 className="text-4xl font-semibold py-8">Live Anywhere</h2>
-      <div className="flex space-x-3 overflow-scroll scrollbar-hide p-3">
+      <h2 className="py-8 text-4xl font-semibold">Live Anywhere</h2>
+      <div className="scrollbar-hide flex space-x-3 overflow-scroll p-3">
         {data?.map(({ img, title }) => (
           <div
             key={img}
-            className="rounded-xl cursor-pointer  hover:scale-105 transition transform duration-300 ease-out -ml-3"
+            className="-ml-3 transform  cursor-pointer rounded-xl transition duration-300 ease-out hover:scale-105"
           >
             <div className="relative h-80 w-80">
               <Image
@@ -20,13 +20,13 @@ const MediumCards = ({ data }) => {
               />
             </div>
             <div>
-              <h3 className="text-2xl mt-3">{title}</h3>
+              <h3 className="mt-3 text-2xl">{title}</h3>
             </div>
           </div>
         ))}
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default MediumCards;
+export default MediumCards

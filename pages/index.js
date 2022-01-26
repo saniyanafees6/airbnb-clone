@@ -1,7 +1,7 @@
-import Head from 'next/head';
-import React from 'react';
-import { Banner, SmallCards, MediumCards, LargeCard } from '../components/Home';
-import { Navigation, Footer } from '../components';
+import Head from 'next/head'
+import React from 'react'
+import { Banner, SmallCards, MediumCards, LargeCard } from '../components/Home'
+import { Navigation, Footer } from '../components'
 
 const Home = ({ exploreData, cardsData }) => {
   return (
@@ -12,7 +12,7 @@ const Home = ({ exploreData, cardsData }) => {
       </Head>
       <Navigation />
       <Banner />
-      <main className="max-w-7xl mx-auto px-8 sm:px-16">
+      <main className="mx-auto max-w-7xl px-8 sm:px-16">
         <SmallCards data={exploreData} />
         <MediumCards data={cardsData} />
         <LargeCard
@@ -24,22 +24,22 @@ const Home = ({ exploreData, cardsData }) => {
       </main>
       <Footer />
     </div>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home
 export const getStaticProps = async () => {
   const exploreData = await fetch('https://links.papareact.com/pyp').then(
     (res) => res.json()
-  );
+  )
   const cardsData = await fetch('https://links.papareact.com/zp1').then((res) =>
     res.json()
-  );
+  )
 
   return {
     props: {
       exploreData,
       cardsData,
     },
-  };
-};
+  }
+}
